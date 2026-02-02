@@ -1,5 +1,4 @@
 # Ticket_Triage_App
-# Ticket_Triage_App
 
 Ticket_Triage_App is an intelligent ticket triage system that automatically classifies incoming tickets based on their **title** and **description** using a machine learning model. It helps support teams efficiently categorize tickets into:
 

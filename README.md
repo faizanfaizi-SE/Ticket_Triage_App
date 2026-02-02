@@ -70,4 +70,40 @@ cd ../frontend
 npm install
 npm run dev
 
+## Model Evaluation Metrics
+
+The machine learning model (Logistic Regression with TF-IDF features) was evaluated on the training dataset.  
+
+- **Model:** Logistic Regression  
+- **Feature Extraction:** TF-IDF Vectorizer  
+- **Labels:** Complaint, Request, Sales, Other  
+
+### Metrics
+
+The model achieved perfect performance on the training dataset:
+
+| Metric    | Score |
+|-----------|-------|
+| F1-Score  | 1.0   |
+
+### Confusion Matrix
+
+The confusion matrix of the model predictions:
+
+| Actual \ Predicted | Complaint | Request | Sales | Other |
+|-------------------|-----------|--------|-------|-------|
+| Complaint          | 10        | 0      | 0     | 0     |
+| Request            | 0         | 8      | 0     | 0     |
+| Sales              | 0         | 0      | 10    | 0     |
+| Other              | 0         | 0      | 0     | 10    |
+
+> ✅ Interpretation: All classes were correctly predicted on the training dataset.  
+> ⚠️ Note: These metrics are based on the training dataset. Performance on real-world or unseen data may vary.
+
+---
+
+**Usage in Project:**  
+- The trained model is saved as `ml/model.pkl`  
+- The vectorizer is saved as `ml/vectroizer.pkl`  
+- During ticket submission, the backend loads these files to classify new tickets into **Complaint, Request, Sales, or Other**
 
